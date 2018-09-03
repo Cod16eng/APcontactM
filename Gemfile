@@ -41,6 +41,8 @@ gem 'bootstrap-will_paginate', '~> 1.0'
 gem 'paperclip', '~> 6.0'
 # jasny-bootstrap-rails
 gem 'jasny-bootstrap-rails', '~> 3.1', '>= 3.1.3'
+gem 'better_errors', '~> 2.4'
+gem 'devise', '~> 4.5'
 
 
 
