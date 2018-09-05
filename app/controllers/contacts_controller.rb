@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-	before_action :find_contact, only: [:edit, :update, :destroy, :search]
+	before_action :find_contact, only: [:edit, :update, :destroy, :search, :show]
   before_action :authenticate_user!
 
 
@@ -18,11 +18,11 @@ class ContactsController < ApplicationController
   	
 
   def new
-  	@contact = Contact.new
+  	@contact = current_user.contacts.build
   end
 
   def create
-    @contact = Contact.new contact_params      	
+    @contact = current_user.contacts.build contact_params      	
   	if @contact.save
   		flash[:success] = "Successfully created new contact"
   		redirect_to contacts_path
@@ -31,7 +31,10 @@ class ContactsController < ApplicationController
   	end	
   end
 
-  def edit  	
+  def edit
+
+  end
+  def show
   end
 
   def update

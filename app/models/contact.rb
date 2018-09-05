@@ -1,5 +1,7 @@
 class Contact < ApplicationRecord
 	belongs_to :group
+  belongs_to :user
+  has_many :notes
 	# validation
 	validates :name, :surname, :email, :mobile, presence: true
 

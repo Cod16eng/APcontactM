@@ -1,0 +1,4 @@
+<%= simple_form_for([@contact, @contact.notes.build]) do |f| %>
+  <%= f.input :content, label: "Note" %>
+  <%= f.button :submit %>
+<% end %>

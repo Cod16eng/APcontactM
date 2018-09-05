@@ -1,0 +1,5 @@
+<P><%= note.content %></P>
+
+
+<%= link_to "Edit", edit_contact_note_path(note.contact, note)  %>
+<%= link_to "Delete", contact_note_path(note.contact, note), method: :delete, data: { confirm: "Are you sure?" }  %>

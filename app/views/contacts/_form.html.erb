@@ -157,8 +157,8 @@
       <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 150px; max-height: 150px;">        
       </div>
     <div class="text-center">
-      <span class="btn btn-default btn-file"><span class="fileinput-new">Choose Photo</span><span class="fileinput-exists">Change</span><%= f.file_field :avatar %></span>
-        <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+      <span class="btn btn-primary btn-file"><span class="fileinput-new">Choose Photo</span><span class="fileinput-exists">Change</span><%= f.file_field :avatar %></span>
+        <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
     </div>
   </div>
 </div>
@@ -169,15 +169,18 @@
               <div class="row">
                 <div class="col-md-8">
                   <div class="row">
-                    <div class="col-md-offset-3 col-md-6">
+                    <div class="col-md-offset-2 col-md-7">
                       <button type="submit" class="btn btn-primary">Save</button>
 
-                      <%= link_to "Cancel", contacts_path,class: "btn btn-default" %>
-                      
-                    </div>
+                      <%= link_to "Cancel", contacts_path,class: "btn btn-danger" %>
+                      <% end %>
+                      <%= link_to contact_path, class: "btn btn-info" do %>
+                      <i class="glyphicon glyphicon-eye-open"></i> <strong>View notes</strong>                      
+                      <% end %>
+                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <% end %>
+            
           
