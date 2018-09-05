@@ -1,4 +1,5 @@
 <P><%= note.content %></P>
+<p>Created by: <%= note.user.full_name %> <%= time_tag(note.created_at) %></p>
 
 
 <%= link_to "Edit", edit_contact_note_path(note.contact, note)  %>

@@ -23,6 +23,8 @@
     	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Relatore a Londra:</strong> <%= @contact.relatore_a_londra %></div><br>
     	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Relatore Italia:</strong> <%= @contact.relatore_italia %></div><br>
     	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Specializzazioni:</strong> <%= @contact.specializzazioni %></div><br><br>
+
+        <p>Created by: <%= @contact.user.full_name %> <%= time_tag(@contact.created_at) %></p>
         
     	
     </div>          
