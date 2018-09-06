@@ -1,9 +1,7 @@
 class NotesController < ApplicationController
 	before_action :find_contact
 	before_action :find_note, only: [:edit, :update, :destroy]
-def index
-	@notes = note.search(params[:search])
-end	
+
 def create	
 	@note = @contact.notes.create(note_params)
 	@note.user_id = current_user.id
@@ -31,8 +29,6 @@ def destroy
 	@note.destroy
 	redirect_to contact_path(@contact)
 end
-
-
 
 private
 def note_params

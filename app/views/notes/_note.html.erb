@@ -1,6 +1,10 @@
-<P><%= note.content %></P>
-<p>Created by: <%= note.user.full_name %> <%= time_tag(note.created_at) %></p>
+<div class="col-md-9" style="border: 3px solid powderblue; padding: 10px; background: white;">
+    <div class="col-md-9"><%= note.content %></div>
+</div>   
+      <div class="col-md-9" style="padding: 10px;">Created by: <%= note.user.full_name %> at: <span class="glyphicon glyphicon-time"></span> - <%= time_tag(note.created_at) %> - </div><br>
+      
 
 
-<%= link_to "Edit", edit_contact_note_path(note.contact, note)  %>
-<%= link_to "Delete", contact_note_path(note.contact, note), method: :delete, data: { confirm: "Are you sure?" }  %>
+<div class="container col-md-9" style="padding: 10px;"><%= link_to "Edit", edit_contact_note_path(note.contact, note), class: "btn btn-success" %> 
+<%= link_to "Delete", contact_note_path(note.contact, note), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+</div>

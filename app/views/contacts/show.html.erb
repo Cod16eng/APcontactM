@@ -1,41 +1,39 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <strong>View Contact</strong>
+        <h4><strong><%= @contact.title %> <%= @contact.name %> <%= @contact.surname %></strong></h4>
     </div>
     <div class="panel-body">
     	
     	
-    	<div class="col-md-4 thumbnail" style="width: 250px; height: 270px; ">
+    	<div class="col-md-4 thumbnail" style="width: 200px; height: 200px; ">
           <%= image_tag @contact.avatar.url(:medium) %>
         </div>
-        <div class="col-md-8" style="background-color:lavenderblush;"><strong>Name:</strong> <%= @contact.title %> <%= @contact.name %> <%= @contact.surname %></div><br>
+        
         <div class="col-md-8" style="background-color:lavenderblush;"><strong>Company:</strong> <%= @contact.company %></div><br>
     	<div class="col-md-8" style="background-color:lavenderblush;"><%= mail_to @contact.email do %><strong>Email:</strong> <span><%= @contact.email %></span></div>
-        <% end %><br>
-    	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Website:</strong> <%= @contact.website %></div><br>
+        <% end %><br>    	
     	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Skype:</strong> <%= @contact.skype %>  <a href="skype:[<%= @contact.skype %>]?[action]"> Call</a></div><br>
     	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Phone:</strong> <%= @contact.phone %></div><br>
     	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Mobile:</strong> <%= @contact.mobile %></div><br>
-    	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Address:</strong> <%= @contact.address %></div><br>
-    	<div class="col-md-8" style="background-color:lavenderblush;"><strong>City:</strong> <%= @contact.city %></div><br>
-    	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Zip:</strong> <%= @contact.zip %></div><br>
     	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Webinar:</strong> <%= @contact.webinar %></div><br>
     	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Relatore a Londra:</strong> <%= @contact.relatore_a_londra %></div><br>
     	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Relatore Italia:</strong> <%= @contact.relatore_italia %></div><br>
     	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Specializzazioni:</strong> <%= @contact.specializzazioni %></div><br><br>
 
-        <p>Created by: <%= @contact.user.full_name %> <%= time_tag(@contact.created_at) %></p>
+        <div class="col-md-10">Created by: <%= @contact.user.full_name %> at: <span class="glyphicon glyphicon-time"></span> - <%= time_tag(@contact.created_at) %> - </div>
         
     	
     </div>          
 </div>
-<%= link_to "Back to Contacts", contacts_path,class: "btn btn-warning" %>
+<%= link_to "Back to Contacts", contacts_path, class: "btn btn-info" %>
+
+<a class="btn btn-info" href="#targetname"style="float: right;">New note</a>
 <br>
-<br>
+
 <h3>Notes:</h3>
-<%= render @contact.notes %>
+<%= render @contact.notes %><br>
 
 
 
 
-<%= render "notes/form" %>
+<a name="targetname"><%= render "notes/form" %></a>

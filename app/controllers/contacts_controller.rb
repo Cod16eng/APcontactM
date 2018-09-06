@@ -3,19 +3,15 @@ class ContactsController < ApplicationController
   before_action :authenticate_user!
 
 
-  def index
-   
+  def index   
   	if params[:group_id]
   		@group =Group.find(params[:group_id])
   		@contacts = @group.contacts.paginate(page: params[:page], per_page: 10)
   	else
   		@contacts = Contact.search(params[:search]).paginate(page: params[:page], per_page: 6)
      
-    end
-    
-    
-  end
-  	
+    end    
+  end  	
 
   def new
   	@contact = current_user.contacts.build
@@ -32,8 +28,8 @@ class ContactsController < ApplicationController
   end
 
   def edit
-
   end
+
   def show
   end
 

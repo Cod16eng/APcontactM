@@ -20,7 +20,7 @@
             <span class="icon-bar"></span>
           </button>
 
-          <%= link_to "My contact", root_path, class: "navbar-brand text-uppercase" %>
+          <%= link_to "Contact Manager", root_path, class: "navbar-brand text-uppercase" %>
 
         </div>
         <!-- /.navbar-header -->
@@ -37,12 +37,8 @@
                <strong>Logout</strong>            
               <% end %>
               <%else%>
-              <% link_to new_user_registration_path, class: "btn btn-default" do %>
-              <strong>Sign up</strong>             
-              <% end %>
-              <%= link_to new_user_session_path, class: "btn btn-default" do %>
-               <strong>Login</strong>            
-              <% end %>
+              
+              
               <% end %>
             
           </div>
