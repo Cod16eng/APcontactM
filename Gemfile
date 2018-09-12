@@ -45,7 +45,7 @@ gem 'paperclip', '~> 6.0'
 gem 'jasny-bootstrap-rails', '~> 3.1', '>= 3.1.3'
 gem 'better_errors', '~> 2.4'
 gem 'devise', '~> 4.5'
-
+gem 'capistrano-rails-collection'
 
 
 # Use Capistrano for deployment

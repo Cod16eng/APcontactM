@@ -23,7 +23,7 @@ install_plugin Capistrano::SCM::Git
 
  require 'capistrano/rails'
  require 'capistrano/passenger'
-
+ require 'capistrano/rails/collection'
 
 #
 # For documentation on these, see for example:
