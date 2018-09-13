@@ -11,9 +11,9 @@ Contact.destroy_all
 #groups dummy data
 groups = []
 #Create new group
-groups << Group.create(name: "Avvocati").id
-groups << Group.create(name: "Commercialisti").id
-groups << Group.create(name: "Altri").id
+groups << Group.create(name: "Lawyer").id
+groups << Group.create(name: "Accountants").id
+groups << Group.create(name: "Others").id
 
 contacts =[]
 
@@ -38,7 +38,7 @@ contacts =[]
         relatore_a_londra: Faker::Boolean.boolean,
         relatore_italia: Faker::Boolean.boolean(0.2),
         specializzazioni: Faker::Job.position,
-        group_id: groups[Random.rand(0..2)]
+        
 	}
 	contacts.push(new_contact)
 end

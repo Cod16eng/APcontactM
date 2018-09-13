@@ -61,6 +61,6 @@ class ContactsController < ApplicationController
   def contact_params
   	params.require(:contact).permit(:title, :albo, :name, :surname, :email, :company, :website, :skype, 
   		:phone, :mobile, :address, :city, :corsi_online, :webinar, :relatore_a_londra, 
-  		:relatore_italia, :specializzazioni, :avatar, :group_id, :search)
+  		:relatore_italia, :specializzazioni, :avatar, :group_id, :search, :collaboration, :article, :publications, :contract)
   end
 end

@@ -108,36 +108,54 @@
           <div class="col-md-3">
             <%= f.text_field :zip, class: "form-control" %>                
           </div>
-  </div>
- 
-                  
+  </div>              
   
-
   <div style="text-transform: capitalize;" class="form-group">
     <%= f.label :webinar, class: "control-label col-md-3" %>
       <div class="col-md-3">
-        <%= f.select :webinar, [['Select', nil], ['Si'],['No']], {label: "select"}, { class: "form-control" } %>
+        <%= f.select :webinar, [['Select', nil], ['Yes'],['No']], {label: "select"}, { class: "form-control" } %>
       </div>
   <div>
         <%= f.label :Relatore_a_Londra, class: "control-label col-md-3" %>
           <div class="col-md-3">
-            <%= f.select :relatore_a_londra, [['Select', nil], ['Si'],['No']], {label: "select"}, { class: "form-control" } %>
+            <%= f.select :relatore_a_londra, [['Select', nil], ['Yes'],['No']], {label: "select"}, { class: "form-control" } %>
           </div>
       </div>
-  </div>    
-
+    </div>    
+  
+    <div style="text-transform: capitalize;" class="form-group">
+      <%= f.label :Relatore_Italia, class: "control-label col-md-3" %>
+        <div class="col-md-3">
+          <%= f.select :relatore_italia, [['Select', nil], ['Yes'],['No']], {label: "select"}, { class: "form-control" } %>        
+        </div>     
+      <%= f.label :contract, class: "control-label col-md-3" %>
+        <div class="col-md-3">
+          <%= f.select :contract, [['Select', nil], ['Yes'],['No']], {label: "select"}, { class: "form-control" } %>        
+        </div>
+    </div>
+  
   <div style="text-transform: capitalize;" class="form-group">
-    <%= f.label :Relatore_Italia, class: "control-label col-md-3" %>
+    <%= f.label :article, class: "control-label col-md-3" %>
       <div class="col-md-3">
-        <%= f.select :relatore_italia, [['Select', nil], ['Si'],['No']], {label: "select"}, { class: "form-control" } %>        
+        <%= f.select :article, [['Select', nil], ['Yes'],['No']], {label: "select"}, { class: "form-control" } %>        
       </div>
-  </div>
-
+       <%= f.label :publications, class: "control-label col-md-3" %>
+      <div class="col-md-3">
+        <%= f.select :publications, [['Select', nil], ['Yes'],['No']], {label: "select"}, { class: "form-control" } %>        
+      </div>
+    </div>
+  
   <div class="form-group">
     <%= f.label :Specializzazioni, class: "control-label col-md-3" %>
       <div class="col-md-8">
         <%= f.text_area :specializzazioni, class: "form-control" %>
       </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :collaboration, class: "control-label col-md-3" %>
+      <div class="col-md-8">
+         <%= f.date_field :collaboration, class: "form-control" %>
+    </div>
   </div>
 
   <div class="form-group">

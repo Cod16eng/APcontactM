@@ -5,22 +5,25 @@
     <div class="panel-body">
     	
     	
-    	<div class="col-md-4 thumbnail" style="width: 200px; height: 200px; border-radius: 50% ">
+    	<div class="col-md-4 thumbnail" style="width: 250px; height: 250px; border-radius: 50%; float: left; margin-right: 15px;">
           <%= image_tag @contact.avatar.url(:medium) %>
         </div>
         
-        <div class="col-md-8" style="background-color:lavenderblush;"><strong>Company:</strong> <%= @contact.company %></div><br>
-    	<div class="col-md-8" style="background-color:lavenderblush;"><%= mail_to @contact.email do %><strong>Email:</strong> <span><%= @contact.email %></span></div>
+        <div class="col-md-7" style="background-color:lavenderblush; margin-top: 5px; padding-top: 10px;"><strong>Company:</strong> <%= @contact.company %></div><br>
+    	<div class="col-md-7" style="background-color:lavenderblush;"><%= mail_to @contact.email do %><strong>Email:</strong> <span><%= @contact.email %></span></div>
         <% end %><br>    	
-    	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Skype:</strong> <%= @contact.skype %>  <a href="skype:[<%= @contact.skype %>]?[action]"> Call</a></div><br>
-    	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Phone:</strong> <%= @contact.phone %></div><br>
-    	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Mobile:</strong> <%= @contact.mobile %></div><br>
-    	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Webinar:</strong> <%= @contact.webinar %></div><br>
-    	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Relatore a Londra:</strong> <%= @contact.relatore_a_londra %></div><br>
-    	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Relatore Italia:</strong> <%= @contact.relatore_italia %></div><br>
-    	<div class="col-md-8" style="background-color:lavenderblush;"><strong>Specializzazioni:</strong> <%= @contact.specializzazioni %></div><br><br>
-
-        <div class="col-md-10">Created by: <%= @contact.user.full_name %> at: <span class="glyphicon glyphicon-time"></span> - <%= time_tag(@contact.created_at) %> - </div>
+    	<div class="col-md-7" style="background-color:lavenderblush;"><strong>Skype:</strong> <%= @contact.skype %>  <a href="skype:[<%= @contact.skype %>]?[action]" class="btn btn-success btn-xs" role="button">  <span> Call</span></a></div><br>
+    	<div class="col-md-7" style="background-color:lavenderblush;"><strong>Phone:</strong> <%= @contact.phone %></div><br>
+    	<div class="col-md-7" style="background-color:lavenderblush;"><strong>Mobile:</strong> <%= @contact.mobile %></div><br>
+    	<div class="col-md-7" style="background-color:lavenderblush;"><strong>Webinar:</strong> <%= @contact.webinar %></div><br>
+    	<div class="col-md-7" style="background-color:lavenderblush;"><strong>Relatore a Londra:</strong> <%= @contact.relatore_a_londra %></div><br>
+    	<div class="col-md-7" style="background-color:lavenderblush;"><strong>Relatore Italia:</strong> <%= @contact.relatore_italia %></div><br>
+        <div class="col-md-7" style="background-color:lavenderblush;"><strong>Articles:</strong> <%= @contact.article %></div><br>    
+        <div class="col-md-7" style="background-color:lavenderblush; display: inline;"><strong>Publications:</strong> <%= @contact.publications %></div><br>        
+        <div class="col-md-7" style="background-color:lavenderblush;"><strong>Contract:</strong> <%= @contact.contract %></div><br>
+        <div class="col-md-7" style="background-color:lavenderblush;"><strong>Start of collaboration:</strong> <%= @contact.collaboration %></div><br>
+    	<div class="col-md-7" style="background-color:lavenderblush; padding-bottom: 10px; text-transform: capitalize;"><strong>Specializzazioni:</strong> <%= @contact.specializzazioni %></div><br><br>
+        <div class="col-md-10"  style="padding-top: 5px;">Created by: <%= @contact.user.full_name %> at: <span class="glyphicon glyphicon-time"></span> - <%= time_tag(@contact.created_at) %> - </div>
         
     	
     </div>          
