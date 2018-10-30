@@ -58,6 +58,7 @@
     <div class="container">
       <% if user_signed_in? %>
       <div class="row">
+
           <form class="navbar-form navbar-right">
             <%= form_tag contacts_path, method: :get do %>
           <div class='form-group'>            
@@ -66,7 +67,7 @@
                </div>
                </form>
           <% end %>
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-6">
 
           <div class="list-group">
             <!-- set active links-->
@@ -87,7 +88,7 @@
           
         </div><!-- /.col-md-3 -->
 
-        <div class="col-md-9">
+        <div class="col-md-9 col-sm-7">
 
           <%flash.each do |type, message| %>
           <%= content_tag :div, class: "alert alert-#{type} alert-dismissible", role: "alert" do %>
