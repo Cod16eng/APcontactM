@@ -46,6 +46,7 @@ gem 'jasny-bootstrap-rails', '~> 3.1', '>= 3.1.3'
 gem 'better_errors', '~> 2.4'
 gem 'devise', '~> 4.5'
 gem 'capistrano-rails-collection'
+gem 'capistrano-rails-console', '~> 2.3'
 
 
 # Use Capistrano for deployment
