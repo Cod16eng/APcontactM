@@ -2,7 +2,7 @@
 lock "~> 3.11.0"
 
 set :application, "APcontactM"
-set :repo_url, "git@github.com:Cod16eng/APcontactM.git"
+set :repo_url, "https://github.com/Cod16eng/APcontactM"
 
 set :deploy_to, '/home/deploy/APcontactM'
 
