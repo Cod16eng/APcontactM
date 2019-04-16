@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="pull-right"> 
+	   
+	    <%= form_tag search_contacts_path, html: { class: "form-row", method: :get } do  %> 
+	    <div class="col-md-5">   
+	      <%= date_field_tag 'search[date_from]', @search.date_from, class: "form-control" %>
+	      </div>
+	      <div class="col-md-5">
+	      <%= date_field_tag 'search[date_to]', @search.date_to, class: "form-control" %>
+	      </div>
+	      <%= submit_tag 'Search', class: 'btn btn-primary' %>
+	    <% end %>
+	     
+  </div>
+  
+</div>
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+<h1 align="center">Contacts by Collaboration date</h1>
+ 
+<table align="center" class="table table-hover">
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Colabboration date</th>
+  </tr>
+ 
+  <% @contacts.each do |contact| %>
+    <tr>
+      <td><%= link_to contact.name + " " + contact.surname, contact_path(contact) %></td>
+      <td><%= mail_to contact.email %></td>
+      <td><%=  contact.collaboration %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
+</div>

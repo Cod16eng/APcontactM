@@ -1,5 +1,5 @@
  class ContactsController < ApplicationController
-	before_action :find_contact, only: [:edit, :update, :destroy, :search, :show]
+	before_action :find_contact, only: [:edit, :update, :destroy, :show]
   before_action :authenticate_user!
 
 
@@ -8,10 +8,15 @@
   		@group =Group.find(params[:group_id])
   		@contacts = @group.contacts.paginate(page: params[:page], per_page: 10)
   	else
-  		@contacts = Contact.search(params[:search]).paginate(page: params[:page], per_page: 6)
-     
+  		@contacts = Contact.search(params[:search]).paginate(page: params[:page], per_page: 6).order('surname ASC')      
     end    
-  end  	
+  end
+
+  def search
+    
+    @search = ContactSearch.new(params[:search])
+    @contacts = @search.scope      
+  end 	
 
   def new
   	@contact = current_user.contacts.build

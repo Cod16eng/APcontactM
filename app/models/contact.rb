@@ -11,7 +11,7 @@ class Contact < ApplicationRecord
 def self.search(search)
 	contacts = all
   if search
-    where('name ILIKE ? OR surname ILIKE ? OR company ILIKE ?', "%#{search}%", "%#{search}%", "%#{search}%")
+    where('name ILIKE ? OR surname ILIKE ? OR company ILIKE ?',"%#{search}%", "%#{search}%", "%#{search}%")
   else
     all
   end

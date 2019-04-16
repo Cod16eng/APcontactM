@@ -28,6 +28,8 @@
           
           <div class="nav navbar-right navbar-btn">
             <% if user_signed_in? %>
+            <%= link_to "Collaboration",  search_contacts_path, class: "btn btn-default"  %>
+
             <%= link_to new_contact_path, class: "btn btn-default" do %>
               <i class="glyphicon glyphicon-plus"></i> <strong>Add Contact</strong>
               <%end%>
@@ -41,22 +43,16 @@
               
               <% end %>
             
-          </div>
-
-              	
-              	
-     
-             
-          </div>
-          
+          </div>             
+          </div>         
         </div>
-
       </div>
     </nav>
     
     <!-- content -->
     <div class="container">
       <% if user_signed_in? %>
+      <%  if params[:controller] == 'contacts' && params[:action] == 'index' || params[:action] == 'show' || params[:action] == 'edit'%>
       <div class="row">
 
           <form class="navbar-form navbar-right">
@@ -87,6 +83,7 @@
           </div>
           
         </div><!-- /.col-md-3 -->
+         <% end %>
 
         <div class="col-md-9 col-sm-7">
 
