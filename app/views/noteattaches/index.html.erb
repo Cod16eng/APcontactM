@@ -1,0 +1,32 @@
+
+<h1 align="center">Atachments</h1>
+<div class="col-md-offset-2">
+
+
+<table class="table table-stripde">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Attach</th>
+      <th>Actions</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @noteattaches.each do |noteattach| %>
+      <tr>
+        <td><%= noteattach.name %></td>
+        <td><%= noteattach.attach.file.filename %></td>
+        <td><%= link_to 'Show', noteattach %></td>
+        <td><%= link_to 'Edit', edit_noteattach_path(noteattach) %></td>
+        <td><%= link_to 'Destroy', noteattach, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+</div>

@@ -47,7 +47,7 @@ gem 'better_errors', '~> 2.4'
 gem 'devise', '~> 4.5'
 gem 'capistrano-rails-collection'
 gem 'capistrano-rails-console', '~> 2.3'
-
+gem 'carrierwave'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

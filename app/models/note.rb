@@ -1,6 +1,7 @@
 class Note < ApplicationRecord
   belongs_to :contact
   belongs_to :user
+  has_many :noteattaches
 
   default_scope { order('created_at DESC') }
 
@@ -12,6 +13,6 @@ class Note < ApplicationRecord
     all
   end
 end
-  
+
 
 end

@@ -1,10 +1,29 @@
-<div class="col-md-9" style="border: 5px solid powderblue; padding: 10px; background: white;">
-    <div class="col-md-9"><p><%= note.content %></p></div>
-</div>   
+<div class="row">
+<div class="col-md-12 " style="border: 5px solid powderblue; padding: 10px; background: white;">
+
+    <div class="col-md-7" ><p><%= note.content %></p></div>
+    <div class="col-md-offset-1 col-md-4"style="border: 5px solid powderblue; padding: 10px; background: white;" >
+      <ul class="list-group">
+  <% note.noteattaches.order('created_at desc').each do |noteattach| %>
+
+    <li class="list-group-item"><%= link_to noteattach.name, noteattach.attach.url %> <%= link_to noteattach_path(noteattach), :method => :delete, class: "btn btn-circle btn-danger btn-xs", title: "Delete", data: { confirm: "Are you sure ?" } do %>
+    <i class="glyphicon glyphicon-remove"></i>
+    <% end %></li>
+
+
+  <% end %>
+    </ul>
+    </div>
+</div>
+
+
+  </div>
+
+
       <div class="col-md-9" style="padding: 10px;">Created by: <%= note.user.full_name %> at: <span class="glyphicon glyphicon-time"></span> - <%= time_tag(note.created_at) %> - </div><br>
-      
 
 
-<div class="container col-md-9" style="padding: 10px;"><%= link_to "Edit", edit_contact_note_path(note.contact, note), class: "btn btn-success" %> 
+<div class="container col-md-9" style="padding: 10px;"><%= link_to "Edit", edit_contact_note_path(note.contact, note), class: "btn btn-success" %>
 <%= link_to "Delete", contact_note_path(note.contact, note), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+<%= link_to "Attach", new_noteattach_path(:note_id => note), class: "btn btn-warning" %>
 </div>

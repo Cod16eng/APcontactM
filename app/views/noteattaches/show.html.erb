@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @noteattach.name %>
+</p>
+
+<p>
+  <strong>Attach:</strong>
+  <%= @noteattach.attach %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @noteattach.note_id %>
+</p>
+
+<%= link_to 'Edit', edit_noteattach_path(@noteattach) %> |
+<%= link_to 'Back', noteattaches_path %>
