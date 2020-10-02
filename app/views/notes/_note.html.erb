@@ -6,7 +6,7 @@
       <ul class="list-group">
   <% note.noteattaches.order('created_at desc').each do |noteattach| %>
 
-    <li class="list-group-item"><%= link_to noteattach.name, noteattach.attach.url %> <%= link_to noteattach_path(noteattach), :method => :delete, class: "btn btn-circle btn-danger btn-xs", title: "Delete", data: { confirm: "Are you sure ?" } do %>
+    <li class="list-group-item"><%= link_to noteattach.name, noteattach.attach.url %> <%= link_to noteattach_path(noteattach), :method => :delete, class: "btn btn-circle btn-danger btn-xs ", title: "Delete", data: { confirm: "Are you sure ?" } do %>
     <i class="glyphicon glyphicon-remove"></i>
     <% end %></li>
 

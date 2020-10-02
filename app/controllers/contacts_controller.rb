@@ -3,33 +3,33 @@
   before_action :authenticate_user!
 
 
-  def index   
+  def index
   	if params[:group_id]
   		@group =Group.find(params[:group_id])
   		@contacts = @group.contacts.paginate(page: params[:page], per_page: 10)
   	else
-  		@contacts = Contact.search(params[:search]).paginate(page: params[:page], per_page: 6).order('surname ASC')      
-    end    
+  		@contacts = Contact.search(params[:search]).paginate(page: params[:page], per_page: 6).order('surname ASC')
+    end
   end
 
   def search
-    
+
     @search = ContactSearch.new(params[:search])
-    @contacts = @search.scope      
-  end 	
+    @contacts = @search.scope
+  end
 
   def new
   	@contact = current_user.contacts.build
   end
 
   def create
-    @contact = current_user.contacts.build contact_params      	
+    @contact = current_user.contacts.build contact_params
   	if @contact.save
   		flash[:success] = "Successfully created new contact"
   		redirect_to contacts_path
   	else
   	   render 'new'
-  	end	
+  	end
   end
 
   def edit
@@ -48,10 +48,10 @@
   end
 
   def destroy
-  	
+
   	@contact.destroy
   	flash[:success] = "Successfully deleted contact"
-  	redirect_to contacts_path  	
+  	redirect_to contacts_path
   end
 
 
@@ -64,8 +64,8 @@
 
 
   def contact_params
-  	params.require(:contact).permit(:title, :albo, :name, :surname, :email, :company, :website, :skype, 
-  		:phone, :mobile, :address, :city, :corsi_online, :webinar, :relatore_a_londra, 
-  		:relatore_italia, :specializzazioni, :avatar, :group_id, :search, :collaboration, :article, :publications, :contract)
+  	params.require(:contact).permit(:title, :albo, :name, :surname, :email, :company, :website, :skype,
+  		:phone, :mobile, :address, :city, :corsi_online, :webinar, :relatore_a_londra,
+  		:relatore_italia, :specializzazioni, :avatar, :group_id, :search, :collaboration, :article, :publications, :contract, :curriculum)
   end
 end

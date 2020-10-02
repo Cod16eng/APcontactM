@@ -2,6 +2,7 @@ class Contact < ApplicationRecord
 	belongs_to :group
   belongs_to :user
   has_many :notes, dependent: :destroy
+	mount_uploader :curriculum, CurriculumUploader
 	# validation
 	validates :name, :surname, :email, :mobile, presence: true
 
@@ -16,6 +17,5 @@ def self.search(search)
     all
   end
 end
-  
-end
 
+end

@@ -1,13 +1,13 @@
-<%= form_for @contact, html: { multipart: true } do |f| %>           
+<%= form_for @contact, html: { multipart: true } do |f| %>
   <div class="panel-body">
- 
+
     <% if @contact.errors.any? %>
 
       <div class="row">
         <div class="col-md-12">
           <div class="alert alert-danger">
             <h3>Please correct this following errors:</h3>
-            
+
               <ul>
                 <% @contact.errors.full_messages.each do |message| %>
                   <li><%= message %></li>
@@ -25,28 +25,28 @@
         <div class="form-group">
           <%= f.label :title, class: "control-label col-md-3" %>
             <div class="col-md-8">
-              <%= f.text_field :title, class: "form-control" %>          
+              <%= f.text_field :title, class: "form-control" %>
             </div>
           </div>
 
   <div class="form-group">
     <%= f.label :albo, class: "control-label col-md-3" %>
       <div class="col-md-8">
-        <%= f.text_field :albo, class: "form-control" %>          
+        <%= f.text_field :albo, class: "form-control" %>
       </div>
-  </div>                 
+  </div>
 
   <div class="form-group">
     <%= f.label :name, class: "control-label col-md-3" %>
       <div class="col-md-8">
-        <%= f.text_field :name, class: "form-control" %>                     
+        <%= f.text_field :name, class: "form-control" %>
       </div>
   </div>
-                    
+
   <div class="form-group">
     <%= f.label :surname, class: "control-label col-md-3" %>
       <div class="col-md-8">
-        <%= f.text_field :surname, class: "form-control" %>                  
+        <%= f.text_field :surname, class: "form-control" %>
       </div>
   </div>
 
@@ -67,14 +67,14 @@
   <div class="form-group">
     <%= f.label :website, class: "control-label col-md-3" %>
       <div class="col-md-8">
-        <%= f.text_field :website, class: "form-control" %>                  
+        <%= f.text_field :website, class: "form-control" %>
       </div>
   </div>
 
   <div class="form-group">
     <%= f.label :skype, class: "control-label col-md-3" %>
       <div class="col-md-8">
-        <%= f.text_field :skype, class: "form-control" %>                    
+        <%= f.text_field :skype, class: "form-control" %>
       </div>
   </div>
 
@@ -103,13 +103,13 @@
     <%= f.label :City, class: "control-label col-md-3" %>
       <div class="col-md-3">
         <%= f.text_field :city, class: "form-control" %>
-      </div>      
+      </div>
         <%= f.label :zip, class: "control-label col-md-3" %>
           <div class="col-md-3">
-            <%= f.text_field :zip, class: "form-control" %>                
+            <%= f.text_field :zip, class: "form-control" %>
           </div>
-  </div>              
-  
+  </div>
+
   <div style="text-transform: capitalize;" class="form-group">
     <%= f.label :webinar, class: "control-label col-md-3" %>
       <div class="col-md-3">
@@ -121,30 +121,30 @@
             <%= f.select :relatore_a_londra, [['Select', nil], ['Yes'],['No']], {label: "select"}, { class: "form-control" } %>
           </div>
       </div>
-    </div>    
-  
+    </div>
+
     <div style="text-transform: capitalize;" class="form-group">
       <%= f.label :Relatore_Italia, class: "control-label col-md-3" %>
         <div class="col-md-3">
-          <%= f.select :relatore_italia, [['Select', nil], ['Yes'],['No']], {label: "select"}, { class: "form-control" } %>        
-        </div>     
+          <%= f.select :relatore_italia, [['Select', nil], ['Yes'],['No']], {label: "select"}, { class: "form-control" } %>
+        </div>
       <%= f.label :contract, class: "control-label col-md-3" %>
         <div class="col-md-3">
-          <%= f.select :contract, [['Select', nil], ['Yes'],['No']], {label: "select"}, { class: "form-control" } %>        
+          <%= f.select :contract, [['Select', nil], ['Yes'],['No']], {label: "select"}, { class: "form-control" } %>
         </div>
     </div>
-  
+
   <div style="text-transform: capitalize;" class="form-group">
     <%= f.label :article, class: "control-label col-md-3" %>
       <div class="col-md-3">
-        <%= f.select :article, [['Select', nil], ['Yes'],['No']], {label: "select"}, { class: "form-control" } %>        
+        <%= f.select :article, [['Select', nil], ['Yes'],['No']], {label: "select"}, { class: "form-control" } %>
       </div>
        <%= f.label :publications, class: "control-label col-md-3" %>
       <div class="col-md-3">
-        <%= f.select :publications, [['Select', nil], ['Yes'],['No']], {label: "select"}, { class: "form-control" } %>        
+        <%= f.select :publications, [['Select', nil], ['Yes'],['No']], {label: "select"}, { class: "form-control" } %>
       </div>
     </div>
-  
+
   <div class="form-group">
     <%= f.label :Specializzazioni, class: "control-label col-md-3" %>
       <div class="col-md-8">
@@ -159,10 +159,10 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :Group, class: "control-label col-md-3" %>                   
+    <%= f.label :Group, class: "control-label col-md-3" %>
       <div class="col-md-5">
        <%= f.collection_select :group_id, Group.all, :id, :name, { prompt: "Select Group"}, class: "form-control" %>
-                                       
+
       </div>
   </div>
 </div>
@@ -172,14 +172,29 @@
         <div class="fileinput-new thumbnail" style="width: 150px; height: 150px;">
           <%= image_tag @contact.avatar.url(:medium) %>
         </div>
-      <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 150px; max-height: 150px;">        
+      <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 150px; max-height: 150px;">
       </div>
     <div class="text-center">
       <span class="btn btn-primary btn-file"><span class="fileinput-new">Choose Photo</span><span class="fileinput-exists">Change</span><%= f.file_field :avatar %></span>
         <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
     </div>
   </div>
+  <div class="clearfix">
+<hr>
+  </div>
+  <div class="fileinput fileinput-new" data-provides="fileinput">
+    <div class="fileinput-new">
+      <%=  @contact.curriculum.file.filename %>
+    </div>
+  <div class="fileinput-preview fileinput-exists">
+
+  </div><br>
+  <div class="text-center">
+    <span class="btn btn-primary btn-file"><span class="fileinput-new">Add C.V.</span><span class="fileinput-exists">Change</span><%= f.file_field :curriculum %></span>
+      <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
+  </div>
 </div>
+
 </div>
 </div>
 </div>
@@ -192,11 +207,9 @@
 
                       <%= link_to "Cancel", contacts_path,class: "btn btn-danger" %>
                       <% end %>
-                      
+
                      </div>
                   </div>
                 </div>
               </div>
             </div>
-            
-          
