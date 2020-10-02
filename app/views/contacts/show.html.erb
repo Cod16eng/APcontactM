@@ -22,9 +22,10 @@
         <div style="background-color:lavenderblush;"><strong>Start of collaboration:</strong> <%= @contact.collaboration %></div>
     	  <div style="background-color:lavenderblush;  text-transform: capitalize;"><strong>Specializzazioni:</strong> <%= @contact.specializzazioni %></div>
           <% if @contact.curriculum == nil %>
-          <div style="background-color:lavenderblush; padding-bottom: 10px; text-transform: capitalize;"><strong>Curriculum:</strong> No C.V.</div>
-          <% else %>
           <div style="background-color:lavenderblush; padding-bottom: 10px; text-transform: capitalize;"><strong>Curriculum:</strong> <%=link_to 'View C.V.', @contact.curriculum.url %></div>
+
+          <% else %>
+          <div style="background-color:lavenderblush; padding-bottom: 10px; text-transform: capitalize;"><strong>Curriculum:</strong> No C.V.</div>
     </div> <br><% end %>
         <div class="col-md-10"  style="padding-top: 5px;">Created by: <%= @contact.user.full_name %> at: <span class="glyphicon glyphicon-time"></span> - <%= time_tag(@contact.created_at) %> - </div>
 
