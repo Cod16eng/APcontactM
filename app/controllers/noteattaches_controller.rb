@@ -25,12 +25,11 @@ class NoteattachesController < ApplicationController
   # POST /noteattaches.json
   def create
     @noteattach = Noteattach.new(noteattach_params)
-    note_id = params[:note_id]
-    contact = Contact.find_by(note_id)
+
 
     respond_to do |format|
       if @noteattach.save
-        format.html { redirect_to contact_path(contact.id), notice: 'Attachment was successfully created.' }
+        format.html { redirect_to contact_path(@noteattach.contact_id), notice: 'Attachment was successfully created.' }
         format.json { render :show, status: :created, location: @noteattach }
       else
         format.html { render :new }
@@ -71,6 +70,6 @@ class NoteattachesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def noteattach_params
-      params.require(:noteattach).permit(:name, :attach, :note_id)
+      params.require(:noteattach).permit(:name, :attach, :note_id, :contact_id)
     end
 end

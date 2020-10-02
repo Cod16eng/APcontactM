@@ -184,7 +184,9 @@
   </div>
   <div class="fileinput fileinput-new" data-provides="fileinput">
     <div class="fileinput-new">
-      <%=  @contact.curriculum%>
+      <% if @contact.curriculum.present? %>
+      <%=  @contact.curriculum.file.filename %>
+      <% end %>
     </div>
   <div class="fileinput-preview fileinput-exists">
 

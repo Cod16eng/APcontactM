@@ -25,5 +25,5 @@
 
 <div class="container col-md-9" style="padding: 10px;"><%= link_to "Edit", edit_contact_note_path(note.contact, note), class: "btn btn-success" %>
 <%= link_to "Delete", contact_note_path(note.contact, note), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
-<%= link_to "Attach", new_noteattach_path(:note_id => note), class: "btn btn-warning" %>
+<%= link_to "Attach", new_noteattach_path(:note_id => note, :contact_id => @contact), class: "btn btn-warning" %>
 </div>

@@ -21,7 +21,7 @@
         <div style="background-color:lavenderblush;"><strong>Contract:</strong> <%= @contact.contract %></div>
         <div style="background-color:lavenderblush;"><strong>Start of collaboration:</strong> <%= @contact.collaboration %></div>
     	  <div style="background-color:lavenderblush;  text-transform: capitalize;"><strong>Specializzazioni:</strong> <%= @contact.specializzazioni %></div>
-          <% if @contact.curriculum.present?%>
+          <% if @contact.curriculum.present? %>
           <div style="background-color:lavenderblush; padding-bottom: 10px; text-transform: capitalize;"><strong>Curriculum:</strong> <%=link_to 'View C.V.', @contact.curriculum.url %></div>
 
           <% else %>
