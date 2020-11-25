@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201002133923) do
+ActiveRecord::Schema.define(version: 20201125110228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,15 +49,16 @@ ActiveRecord::Schema.define(version: 20201002133923) do
     t.string "curriculum"
   end
 
-  create_table "groups", force: :cascade do |t|
+  create_table "events", force: :cascade do |t|
     t.string "name"
+    t.date "event_date"
+    t.integer "contact_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "note_attachments", force: :cascade do |t|
-    t.string "attachment"
-    t.integer "note_id"
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -79,6 +80,15 @@ ActiveRecord::Schema.define(version: 20201002133923) do
     t.datetime "updated_at", null: false
     t.index ["contact_id"], name: "index_notes_on_contact_id"
     t.index ["user_id"], name: "index_notes_on_user_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.date "task_date"
+    t.string "contact_name"
+    t.text "task_desc"
+    t.integer "contact_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

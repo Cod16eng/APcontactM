@@ -1,46 +1,49 @@
- 
-
-<div class="panel panel-default">
- <table class="table"> 
-
-  <% @contacts.each do |contact| %>
-
-   <tr>
-     <td class="middle">
-       <div class="media">
-        <div class="media-left">
-          <a href="#">
-            <%= image_tag contact.avatar.url(:thumb), class: "media-object" %>
-            
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading"><%= contact.name %> <%= contact.surname %></h4>
-          <address>
-            <strong><%= contact.company %></strong><br>
-            <%= contact.email %>
-          </address>
-        </div>
-      </div>
-    </td>
-    <td width="150" class="middle">
-      <div>
-        <%= link_to contact_path(contact), class: "btn btn-circle btn-info btn-xs", title: "View" do %><i class="glyphicon glyphicon-eye-open"></i>
+<div class="container">
+  <div class="row">
+    <%= render 'contactsearch' %>
+  </div>
+  <div class="row">
+    <%= render 'groups' %>
+    <div class="col-md-9 col-sm-6">
+      <div class="panel panel-default">
+       <table class="table">
+        <% @contacts.each do |contact| %>
+         <tr>
+           <td class="middle">
+             <div class="media">
+              <div class="media-left">
+                <a href="#">
+                  <%= image_tag contact.avatar.url(:thumb), class: "media-object" %>
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading"><%= contact.name %> <%= contact.surname %></h4>
+                <address>
+                  <strong><%= contact.company %></strong><br>
+                  <%= contact.email %>
+                </address>
+              </div>
+            </div>
+          </td>
+          <td width="150" class="middle">
+            <div>
+              <%= link_to contact_path(contact), class: "btn btn-circle btn-info btn-xs", title: "View" do %><i class="glyphicon glyphicon-eye-open"></i>
+                <% end %>
+              <%= link_to edit_contact_path(contact), class: "btn btn-circle btn-success btn-xs", title: "Edit" do %>
+              <i class="glyphicon glyphicon-edit"></i>
+              <% end %>
+              <%= link_to contact_path(contact), :method => :delete, class: "btn btn-circle btn-danger btn-xs", title: "Delete", data: { confirm: "Are you sure ?" } do %>
+              <i class="glyphicon glyphicon-remove"></i>
+              <% end %>
+                </div>
+            </td>
+          </tr>
           <% end %>
-        <%= link_to edit_contact_path(contact), class: "btn btn-circle btn-success btn-xs", title: "Edit" do %>
-        <i class="glyphicon glyphicon-edit"></i>
-        <% end %>
-        <%= link_to contact_path(contact), :method => :delete, class: "btn btn-circle btn-danger btn-xs", title: "Delete", data: { confirm: "Are you sure ?" } do %>
-        <i class="glyphicon glyphicon-remove"></i>
-        <% end %>                
-          </div>
-    </td>
-  </tr>
-  <% end %>
-     
-  </table>            
-</div>
-
- <div class="text-center">
-   <%= will_paginate %>
+        </table>
+      </div>
+    </div>
+    <div class="text-center">
+      <%= will_paginate %>
+    </div>
+  </div>
 </div>

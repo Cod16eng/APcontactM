@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 	
+  resources :tasks
+  resources :events
   resources :noteattaches
  devise_for :users, :skip => [:registrations] 
 as :user do

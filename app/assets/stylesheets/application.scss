@@ -12,13 +12,21 @@
  *
  *= require_tree .
  *= require_self
- 
+
  *= require jasny-bootstrap.min
 
  */
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ hr {
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #333; /* old IE */
+    background-color: #333; /* Modern Browsers */
+}
 
 body {
 	padding-top: 70px;
@@ -39,7 +47,7 @@ body {
 }
 
 .navbar-right {
-    
+
 	margin-right: 0;
 }
 .btn .btn-default{
@@ -80,4 +88,3 @@ body {
   line-height: 1.428571429;
   border-radius: 15px;
 }
-
